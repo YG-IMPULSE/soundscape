@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  /* Light mode colors */
+  --background: #ffffff;
+  --foreground: #000000;
+  --accent-color: #00d9ff; /* Default, overridden by ThemeContext */
+  
+  /* UI colors for light mode */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+}
+
+:root.dark {
+  /* Dark mode colors */
+  --background: #000000;
+  --foreground: #ededed;
+  
+  /* UI colors for dark mode */
+  --gray-50: #1a1a1a;
+  --gray-100: #2a2a2a;
+  --gray-200: #3a3a3a;
+  --gray-300: #4a4a4a;
+  --gray-700: #b0b0b0;
+  --gray-800: #1f1f1f;
+  --gray-900: #0a0a0a;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom slider styles for audio player */
+input[type="range"].slider {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="range"].slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+input[type="range"].slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+input[type="range"].slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease-in-out;
+}
+
+input[type="range"].slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Utility class for accent color */
+.text-accent {
+  color: var(--accent-color);
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+.border-accent {
+  border-color: var(--accent-color);
+}
+
+.hover\:text-accent:hover {
+  color: var(--accent-color);
+}
+
+.hover\:bg-accent:hover {
+  background-color: var(--accent-color);
+}
