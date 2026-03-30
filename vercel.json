@@ -5,28 +5,6 @@
   "installCommand": "npm install",
   "devCommand": "npm run dev",
   "regions": ["iad1"],
-  "env": {
-    "DATABASE_URL": {
-      "type": "secret",
-      "required": true
-    },
-    "JWT_SECRET": {
-      "type": "secret",
-      "required": true
-    },
-    "NEXTAUTH_SECRET": {
-      "type": "secret",
-      "required": true
-    },
-    "NEXTAUTH_URL": {
-      "type": "secret",
-      "required": true
-    },
-    "NEXT_PUBLIC_STORAGE_PROVIDER": {
-      "type": "plain",
-      "value": "s3"
-    }
-  },
   "build": {
     "env": {
       "ENABLE_EXPERIMENTAL_COREPACK": "1"
