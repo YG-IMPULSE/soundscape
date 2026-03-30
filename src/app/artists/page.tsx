@@ -1,6 +1,8 @@
 import { prisma } from '@/lib/db'
 import ArtistCard from '@/components/artists/ArtistCard'
 
+export const dynamic = 'force-dynamic'
+
 async function getArtists() {
   const artists = await prisma.artist.findMany({
     include: {

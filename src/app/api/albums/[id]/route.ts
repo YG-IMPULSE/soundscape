@@ -7,11 +7,11 @@ interface Params {
 
 export async function GET(
   request: Request,
-  context: { params: Promise<Params> | Params }
+  { params }: { params: Promise<Params> }
 ) {
   try {
-    const params = await Promise.resolve(context.params)
-    const { id } = params
+    const resolvedParams = await params
+    const { id } = resolvedParams
 
     const album = await prisma.album.findUnique({
       where: { id },
